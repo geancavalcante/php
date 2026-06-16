@@ -1,95 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="Pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifólio</title>
+    <title>Site de Receitas</title>
 </head>
 <body>
+
     <?php 
 
-    $nome_completo = "Gean Feitosa Cavalcante";
-    $projeto = "Meu Projeto";
-    $descricao = "Meu primeiro projeto com PHP";
-    $dataDoProjeto = 2024;
-    $concluido = false
+        $receitas = [
 
+            
+            "Pamonha",
+            "Limonada",
+            "Macarronada",
+        ]; 
     ?>
+
     <header>
-
-        <h1>Meu Portifóleo</h1>
-        <h2><?=$nome_completo?></h2>
-
+        <h1>
+            <?php 
+                echo "Receitas"        
+            ?>
+        </h1>
     </header>
 
     <hr>
 
     <main>
-        <section>
-            <div clas="content">
-                <?=$projeto?>
-                
-                <div>
+        <ul>      
+            <?php 
+                  foreach ($receitas as $receita){
+                    if ($receita == "Limonada"){
+            ?>
+                <li>
+                    <h2><?=$receita?></h2>
+                </li>
 
-                    <p><?=$descricao?></p>
-
-                    <i><?=$dataDoProjeto?></i>     
-                    
-                    
-                    <div>
-                        Status:
-                        <b>
-                            <?php 
-                                if ($concluido){
-                                    echo "<span style='color:green'>Concluído ✅​</span>";
-                                } else {
-                                    echo "<span style='color:red'> Não concluído ​❌ ​</span>";
-
-                                }
-                            ?>
-                        </b>
-                    </div>
-                         
-                </div>               
-                <hr>
-
-             <!-- 
-                
-                Essa segunda forma de condicional é mais adequado quando se faz
-                necessário escrever muito HTML dentro da Pagina.
-
+            <?php 
+            }
+                elseif ($receita == "Macarronada"){  
+            ?>
+                <li>
+                    <h2><?=$receita?></h2>
+                </li>
+            <?php 
+            }
+            };         
+               ?>
                  
-                -->
-                <div
-                    <?php if ((2026 - $dataDoProjeto) > 2): ?>
-                        style="background-color: green;"
-
-                    <?php endif; ?>
-
-                    <p><?=$projeto?></p>
-
-                    <i><?=$descricao?></i>
-
-                    <div>
-                        Status:
-
-                        <b>
-                            <?php if ($concluido): ?>
-
-
-                                <span style="color:green"> Concluído ✅ </span>
- 
-                            <?php else: ?>
-                                <span style="color:red">  Não concluído ​❌ </span>
-
-
-                            <?php endif; ?>
-                        </b>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </ul>
     </main>
-  
+
+    <hr>
+
+    <footer>
+
+    </footer>
+    
+    
+    
 </body>
 </html>
